@@ -1,11 +1,9 @@
-class ProdutoService {
-
+class ProductService {
   constructor() {
     this._http = new HttpService();
   }
 
-  obterProdutos() {
+  allProducts() {
     // TODO: implementar
   }
-
 }

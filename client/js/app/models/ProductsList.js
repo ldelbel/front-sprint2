@@ -1,5 +1,3 @@
-class Produto {
-
+class ProductsList {
   // TODO: implementar
-
 }
