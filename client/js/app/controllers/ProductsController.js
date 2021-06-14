@@ -1,4 +1,4 @@
-class ProductController {
+class ProductsController {
   constructor() {
     let $ = document.querySelector.bind(document);
 
@@ -20,6 +20,6 @@ class ProductController {
     //   .then()
     //   .catch();
 
-    this._message.message = 'ProdutosController ainda não foi implementado.';
+    this._message.message = 'ProductsController ainda não foi implementado.';
   }
 }
