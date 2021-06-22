@@ -2,6 +2,13 @@ class ProductsController {
   constructor() {
     let $ = document.querySelector.bind(document);
 
+    this._products = new Bind(
+      new ProductsList(),
+      new ProductsView($('#products')),
+      'adiciona',
+      'esvazia'
+    )
+
     this._message = new Bind(
       new Message(),
       new MessageView($('#messageView')),
@@ -11,15 +18,11 @@ class ProductsController {
     this.allProducts();
   }
 
-  allProducts() {
-    // TODO: implementar
+  async allProducts() {
+    const service = new ProductService();
+    const products = await service.allProducts();
 
-    // let service = new ProdutoService();
-    // service
-    //   .obterProdutos()
-    //   .then()
-    //   .catch();
-
-    this._message.message = 'ProductsController ainda não foi implementado.';
+    const data = products.map(product => new Product(product.imagem, product.descricao, product.valor));
+    this._products.adiciona(data);
   }
 }
